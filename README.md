@@ -9,5 +9,4 @@ Tuples: Utilize Swift tuples to store and retrieve multiple values for displayin
 # Note: This is a basic calculator app and  not include advanced functionalities.
 
 
-![alt text]([http://url/to/img.png](https://github.com/hibath/Calculator/blob/main/Calculator.png))
-
+![alt text](https://github.com/hibath/Calculator/blob/main/Calculator.png?raw=true)
