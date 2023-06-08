@@ -4,7 +4,8 @@
 //
 //  Created by Heba Thabet Agha on 07.06.23.
 //  Computed Property
-// Getter and Setter
+//  Getter and Setter
+//  Swift Tuple
 
 import UIKit
 
@@ -53,10 +54,10 @@ class ViewController: UIViewController {
         
         if let calcButton = sender.currentTitle {
            
-            guard let calcResult = calcManager.calculate(calcButton: calcButton) else {
-                fatalError("result is Nil")
+            if let calcResult = calcManager.calculate(calcButton: calcButton) {
+                displayNumber = calcResult
             }
-            displayNumber = calcResult
+ 
         }
     }
     

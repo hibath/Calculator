@@ -10,21 +10,46 @@ import Foundation
 struct CalculationManager {
 
     private var enteredNumber: Double?
+    private var firstNumberAndCalctionTuple: (number: Double, calculation: String)?
     
     mutating func setEnterendNumber(number: Double) {
         enteredNumber = number
     }
-    func calculate(calcButton: String) -> Double?{
+    
+    mutating func calculate(calcButton: String) -> Double?{
         if let number = enteredNumber {
             
-            if calcButton == "+/-" {
+            switch calcButton {
+            case "+/-":
                 return number * -1
-            }
-            else if calcButton == "AC" {
+            case "AC":
                 return  0
-            }
-            else if calcButton == "%" {
+            case "%":
                 return number * 0.01
+            case "=":
+                return performTowNumCalculation(secondNum: number)
+            default:
+                firstNumberAndCalctionTuple = (number: number , calculation: calcButton)
+            }
+        }
+        return nil
+    }
+    
+    
+    private func performTowNumCalculation (secondNum: Double) -> Double?{
+        
+        if let firstNum = firstNumberAndCalctionTuple?.number, let operation = firstNumberAndCalctionTuple?.calculation {
+            switch operation {
+            case "+" :
+                return firstNum + secondNum
+            case "-" :
+                return firstNum - secondNum
+            case "×" :
+                return firstNum * secondNum
+            case "÷" :
+                return firstNum / secondNum
+            default :
+                fatalError("Can't be calculated")
             }
         }
         return nil
