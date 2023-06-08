@@ -10,7 +10,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var mainLabel: UILabel!
     private var isInputComplete : Bool = true
     var  calcManager = CalculationManager()
@@ -23,13 +23,13 @@ class ViewController: UIViewController {
             return currentNumber
         }
         set {
-            mainLabel.text = String(newValue)
+            mainLabel.text =  String(format: "%.1f", newValue)
         }
     }
-
+    
     @IBAction func numberPressedButton(_ sender: UIButton!) {
-            
-            if let number = sender.currentTitle {
+        
+        if let number = sender.currentTitle {
             if isInputComplete {
                 mainLabel.text = number
                 isInputComplete = false
@@ -50,14 +50,11 @@ class ViewController: UIViewController {
     
     @IBAction func calcPressedButton(_ sender: UIButton!) {
         isInputComplete = true
-        calcManager.setEnterendNumber(number: displayNumber)
-        
+        calcManager.setEnterendNumber(number: displayNumber)        
         if let calcButton = sender.currentTitle {
-           
             if let calcResult = calcManager.calculate(calcButton: calcButton) {
                 displayNumber = calcResult
             }
- 
         }
     }
     
@@ -65,7 +62,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
+    
+    
 }
 
