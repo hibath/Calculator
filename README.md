@@ -6,7 +6,7 @@ Programming Language: Swift
 Computed Properties: Utilize Swift's computed properties to handle the logic for performing calculations.
 Tuples: Utilize Swift tuples to store and retrieve multiple values for displaying results.
 
-# Note: This is a basic calculator app and  not include advanced functionalities.
+# Note: This is a basic calculator app and  not include advanced functionalities. 
 
 
 ![alt text](https://github.com/hibath/Calculator/blob/main/Calculator.png?raw=true)
