@@ -3,9 +3,7 @@
 //  Calculator
 //
 //  Created by Heba Thabet Agha on 07.06.23.
-//  Computed Property
-//  Getter and Setter
-//  Swift Tuple
+
 
 import UIKit
 
